@@ -1,8 +1,4 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-
 
 :root {
     --primary: #6366f1;
@@ -45,6 +41,7 @@ body {
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
+    transition: all 0.2s ease-in-out;
 }
 
 
@@ -181,6 +178,7 @@ button:active {
     font-weight: 500;
 
     transition: .3s;
+    cursor: pointer;
 }
 
 .rightmenus ul li a:hover {
@@ -189,13 +187,31 @@ button:active {
     color: var(--primary);
 }
 
+/* dark theme menu */
+.darktheme {
+    background: black;
+    color: white;
+}
 
+.darktheme .topmenus {
+    background: black;
+    color: white;
+}
 
+.darktheme .rightmenus ul li a {
+    color: white;
+}
+
+/* dark theme menu end */
 .useraccount {
     position: relative;
 }
 
 
+.darktheme .menus {
+    background: black;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
 
 .menus {
     position: absolute;
@@ -228,6 +244,7 @@ button:active {
 .menus button {
     width: 100%;
 }
+
 .menus.activemenu {
     display: block;
 }
@@ -243,6 +260,13 @@ button:active {
     margin: 20px auto;
 }
 
+.darktheme .createcontainer,
+.darktheme .searchcontainer,
+.darktheme .filtercontainer,
+.darktheme .mylistcontainer,
+.darktheme .expensesummry {
+    background-color: black;
+}
 
 .createcontainer,
 .searchcontainer,
@@ -257,9 +281,19 @@ button:active {
 
     box-shadow: var(--shadow-sm);
 }
-
-
-
+.darktheme .input label {
+    color: white;
+}
+.darktheme input,
+.darktheme textarea,
+.darktheme select{
+    background: black;
+    color: white;
+}
+.darktheme .databox{
+    background: black;
+    color: white;
+}
 .input {
     display: flex;
     flex-direction: column;
@@ -289,14 +323,11 @@ button:active {
 
     transition: var(--transition);
 
-    border: 1px solid transparent;
+    border: 1px solid rgba(99, 102, 241, .2);
 }
 
 .databox:hover {
     transform: translateY(-6px);
-
-    border-color: rgba(99, 102, 241, .2);
-
     box-shadow: var(--shadow-md);
 }
 
@@ -347,6 +378,10 @@ button:active {
     transition: .35s ease;
 }
 
+.darktheme .updatecontainer {
+    background: black;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
 .updatecontainer input,
 .updatecontainer textarea,
 .updatecontainer select {
@@ -395,7 +430,7 @@ table td {
 
 
 
-.profileicon{
+.profileicon {
     width: 130px;
     display: flex;
     justify-content: space-around;

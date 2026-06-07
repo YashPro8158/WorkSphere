@@ -1,5 +1,3 @@
-
-
 body {
     display: flex;
     flex-direction: column;
@@ -24,9 +22,9 @@ body {
 .activitybox {
     background: white;
 
+    color: var(--text);
     text-decoration: none;
 
-    color: var(--text);
 
     border-radius: 20px;
 
@@ -49,6 +47,15 @@ body {
     border-color: rgba(99, 102, 241, .15);
 
     box-shadow: var(--shadow-md);
+}
+
+.darktheme .activitybox {
+    background-color: black;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.darktheme .recentactivity{
+    background: black;
 }
 
 .activitybox .left {

@@ -25,7 +25,7 @@ if (currentUser) {
 else {
     window.location.href = "login.html";
 }
- document.getElementById("menus").innerHTML += `
+document.getElementById("menus").innerHTML += `
                 <li>
                     <button id="logout">Logout</button>
                 </li>
@@ -41,28 +41,28 @@ document.getElementById("useraccount").addEventListener("click", () => {
 })
 
 // logout logic
-    document.getElementById("logout").addEventListener("click", () => {
+document.getElementById("logout").addEventListener("click", () => {
+    localStorage.removeItem("currentuser");
+    window.location.href = "login.html";
+})
+// delete accout logic  
+document.getElementById("deleteaccount").addEventListener("click", () => {
+    const confirmmsg = confirm("Your data will be delete permanently, are you sure to delete your account");
+    console.log(confirmmsg);
+    if (confirmmsg === true) {
+        allregisterusers.splice(userindex, 1);
         localStorage.removeItem("currentuser");
-        window.location.href = "login.html";
-    })
-    // delete accout logic  
-    document.getElementById("deleteaccount").addEventListener("click", () => {
-        const confirmmsg = confirm("Your data will be delete permanently, are you sure to delete your account");
-        console.log(confirmmsg);
-        if (confirmmsg === true) {
-            allregisterusers.splice(userindex, 1);
-            localStorage.removeItem("currentuser");
-            localStorage.setItem("registerusers", JSON.stringify(allregisterusers));
-            popmsgshow("white", "red", "Account deleted ");
-            setTimeout(() => {
-                window.location.href = "login.html";
-                return;
-            }, 2200);
-        }
-        else {
-            alert("Account deletion Canceled by user !")
-        }
-    })
+        localStorage.setItem("registerusers", JSON.stringify(allregisterusers));
+        popmsgshow("white", "red", "Account deleted ");
+        setTimeout(() => {
+            window.location.href = "login.html";
+            return;
+        }, 2200);
+    }
+    else {
+        alert("Account deletion Canceled by user !")
+    }
+})
 
 
 
@@ -76,3 +76,7 @@ function popmsgshow(txtcolor, bgcolor, textmsg) {
         document.getElementById("popmsg").style.right = "-100%";
     }, 2000);
 }
+
+document.getElementById("changetheme").addEventListener("click", () => {
+    document.getElementById("darktheme").classList.toggle('darktheme')
+})
