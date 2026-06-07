@@ -17,14 +17,13 @@ document.getElementById("logo").addEventListener("click", () => {
 if (currentUser) {
     // showing username on top
     document.getElementById("username").innerText = currentUser.username;
-
-
-
+ 
 
 }
 else {
     window.location.href = "login.html";
 }
+// menu logout and delete button
 document.getElementById("menus").innerHTML += `
                 <li>
                     <button id="logout">Logout</button>
@@ -66,7 +65,7 @@ document.getElementById("deleteaccount").addEventListener("click", () => {
 
 
 
-
+// pop msg show
 function popmsgshow(txtcolor, bgcolor, textmsg) {
     document.getElementById("popmsg").style.right = "10%";
     document.getElementById("popmsg").style.background = bgcolor;
@@ -76,7 +75,20 @@ function popmsgshow(txtcolor, bgcolor, textmsg) {
         document.getElementById("popmsg").style.right = "-100%";
     }, 2000);
 }
-
+// dark button click
 document.getElementById("changetheme").addEventListener("click", () => {
     document.getElementById("darktheme").classList.toggle('darktheme')
 })
+
+
+async function getQuote() {
+    try {
+        const response = await fetch("https://dummyjson.com/quotes/random");
+        const data = await response.json();
+        document.getElementById("quotes").innerHTML = `“ ${data.quote}  : ” <b>Author: ${data.author}</b> `;
+    } catch (error) {
+
+        document.getElementById("quotes").innerText = `“ Unable to load Quote due ”`;
+        console.log(error)
+    }
+}

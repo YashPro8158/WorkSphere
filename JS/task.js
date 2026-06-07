@@ -45,7 +45,14 @@ function rendertask(data) {
 
             document.getElementById("alltask").innerHTML += `
         <div class="databox" >
-                <h3>Title: ${element.title}</h3>
+                <h3>Title: ${element.title} 
+                ${element.status === "Completed"
+                    ?
+                    `<span class="statusclr" style="color:green">:Task Completed</span>`
+                    :
+                    `<span class="statusclr" style="color:red">:Task Pending</span>`
+                }
+                </h3>
                 <h3>Description: </h3>
                 <p>${element.description}</p>
                 <h3>Due Date: </h3>
@@ -55,7 +62,16 @@ function rendertask(data) {
                 <div class="taskbtn">
                     <button class="edittask" data-index = ${index}>Edit</button>
                     <button class="deletetask" data-index = ${index}>delete</button>
-                    <button class="completedtaskbtn" data-index = ${index}>Mark Completed</button>
+                      ${element.status === "Completed"
+                    ?
+                    `<button class="pendingtaskbtn" data-index="${index}">
+                        Mark Pending
+                    </button>`
+                    :
+                    `<button class="completedtaskbtn" data-index="${index}">
+                        Mark Completed
+                    </button>`
+                }
                 </div>
             </div>
         `;

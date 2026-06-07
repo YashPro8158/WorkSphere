@@ -14,7 +14,8 @@
 <body id="darktheme">
 
     <div id="popmsg"></div>
-    <div class="topmenus" >
+
+    <div class="topmenus">
         <div class="leftlogo" id="logo">
             WorkSphere
         </div>
@@ -33,6 +34,9 @@
             <ul class="menus" id="menus">
             </ul>
         </div>
+    </div>
+
+    <div class="quotes"><b>Today Quotes:</b> <span id="quotes"></span>
     </div>
     <div class="useractionactivity">
         <a href="notes.html#allnotes" class="activitybox">
@@ -69,6 +73,12 @@
         expensescount.innerText = allregisterusers[userindex].expenses.length;
         const completetaskfilter = allregisterusers[userindex].tasks.filter(task => task.status === "Completed");
         completedcount.innerText = completetaskfilter.length;
+
+        getQuote();
+        // changing the quote in very 24 hours
+        setInterval(() => {
+            getQuote();
+        }, 30000);
     </script>
 </body>
 

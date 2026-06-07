@@ -63,7 +63,6 @@ addexpensebtn.addEventListener("click", () => {
         popmsgshow("white", "green", "Expense Added Successfully !")
         expensetitle.value = "";
         expenseamount.value = "";
-        expensecategory.value = "";
         expensedate.value = "";
         showingexpensesummary()
         document.getElementById("totaltransaction").innerText = allregisterusers[userindex].expenses.length;
@@ -86,7 +85,28 @@ function renderexpenses(data) {
 
             document.getElementById("allexpenses").innerHTML += `
         <div class="databox" >
-                <h3>Title: ${element.title}</h3>
+                <h3>Title: ${element.title}
+                
+               
+                ${element.category === "food"
+                    ?
+                    `<span style="color:green">: Food</span>`
+                    :
+                    element.category === "bill"
+                        ?
+                        `<span style="color:crimson">: Bills</span>`
+                        :
+                        element.category === "shopping"
+                            ?
+                            `<span style="color:chocolate">: Shopping</span>`
+                            :
+                              element.category === "travel"
+                            ?
+                            `<span style="color:brown">: Travel</span>`
+                            :``
+                }
+                
+                </h3>
                 <h3>Amount: </h3>
                 <p>${element.amount}</p>
                 <h3>Date: </h3>
