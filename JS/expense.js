@@ -28,7 +28,7 @@ function popmsgshow(txtcolor, bgcolor, textmsg) {
 addexpensebtn.addEventListener("click", () => {
 
     if (expensetitle.value === "" || expenseamount.value === "" || expensedate.value === "" || expensecategory.value === "") {
-        popmsgshow("White", "red", "pls fill all the details");
+        popmsgshow("White", "red", "pls fill all expense details");
         return;
     }
     else {

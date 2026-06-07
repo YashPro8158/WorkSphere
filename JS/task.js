@@ -65,7 +65,7 @@ function rendertask(data) {
 // Add Task Logic
 addtaskbtn.addEventListener("click", () => {
     if (!tasktitle.value.trim() || !taskdesc.value.trim() || taskduedate.value === "" || taskpriority.value === "") {
-        popmsgshow("white", "red", "Please fill all note fields");
+        popmsgshow("white", "red", "Please fill all task fields");
         return;
     }
     else {
