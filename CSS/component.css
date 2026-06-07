@@ -166,7 +166,8 @@ button:active {
     list-style: none;
 }
 
-.rightmenus ul li a {
+.rightmenus ul li a,
+.rightmenus ul li i {
     text-decoration: none;
 
     color: var(--text);
@@ -183,7 +184,12 @@ button:active {
 
 .rightmenus ul li a:hover {
     background: rgba(99, 102, 241, .08);
+    color: var(--primary);
+}
 
+
+.rightmenus ul li i:hover {
+    background: rgba(99, 102, 241, .08);
     color: var(--primary);
 }
 
@@ -198,7 +204,8 @@ button:active {
     color: white;
 }
 
-.darktheme .rightmenus ul li a {
+.darktheme .rightmenus ul li a,
+.darktheme .rightmenus ul li i {
     color: white;
 }
 

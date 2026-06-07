@@ -17,7 +17,7 @@ document.getElementById("logo").addEventListener("click", () => {
 if (currentUser) {
     // showing username on top
     document.getElementById("username").innerText = currentUser.username;
- 
+
 
 }
 else {
@@ -47,7 +47,6 @@ document.getElementById("logout").addEventListener("click", () => {
 // delete accout logic  
 document.getElementById("deleteaccount").addEventListener("click", () => {
     const confirmmsg = confirm("Your data will be delete permanently, are you sure to delete your account");
-    console.log(confirmmsg);
     if (confirmmsg === true) {
         allregisterusers.splice(userindex, 1);
         localStorage.removeItem("currentuser");
@@ -76,8 +75,16 @@ function popmsgshow(txtcolor, bgcolor, textmsg) {
     }, 2000);
 }
 // dark button click
+
+document.getElementById("changetheme").innerHTML = `<i class="fi fi-rc-moon-stars"></i> `
 document.getElementById("changetheme").addEventListener("click", () => {
     document.getElementById("darktheme").classList.toggle('darktheme')
+    if (document.getElementById("darktheme").classList.contains('darktheme')) {
+        document.getElementById("changetheme").innerHTML = `<i class="fi fi-ts-brightness"></i>`
+    }
+    else {
+        document.getElementById("changetheme").innerHTML = `<i class="fi fi-rc-moon-stars"></i> `
+    }
 })
 
 
