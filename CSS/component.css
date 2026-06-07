@@ -121,6 +121,119 @@ button:active {
 
 
 
+
+.topmenus {
+    width: 100%;
+
+    background: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 40px;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .05);
+}
+
+
+
+.leftlogo {
+    font-size: 1.6rem;
+    font-weight: 700;
+
+    color: var(--primary);
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.leftlogo:hover {
+    transform: translateY(-2px);
+}
+
+
+
+.rightmenus ul {
+    display: flex;
+    gap: 10px;
+}
+
+.rightmenus ul li {
+    list-style: none;
+}
+
+.rightmenus ul li a {
+    text-decoration: none;
+
+    color: var(--text);
+
+    padding: 10px 16px;
+
+    border-radius: 12px;
+
+    font-weight: 500;
+
+    transition: .3s;
+}
+
+.rightmenus ul li a:hover {
+    background: rgba(99, 102, 241, .08);
+
+    color: var(--primary);
+}
+
+
+
+.useraccount {
+    position: relative;
+}
+
+
+
+.menus {
+    position: absolute;
+
+    top: 100%;
+    right: 0;
+
+    width: 220px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .12);
+
+    padding: 15px;
+
+
+    transition: .3s;
+
+    z-index: 999;
+    display: none;
+}
+
+.menus li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.menus button {
+    width: 100%;
+}
+.menus.activemenu {
+    display: block;
+}
+
+
+
 .createcontainer,
 .searchcontainer,
 .filtercontainer,
@@ -280,6 +393,29 @@ table td {
     border: 1px solid var(--border);
 }
 
+
+
+.profileicon{
+    width: 130px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profileicon i {
+    font-size: 1.8rem;
+
+    cursor: pointer;
+
+    color: var(--primary);
+
+    transition: .3s;
+}
+
+.profileicon i:hover {
+    transform: scale(1.08);
+}
 
 
 @media (max-width:768px) {

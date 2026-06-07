@@ -17,11 +17,7 @@ document.getElementById("logo").addEventListener("click", () => {
 if (currentUser) {
     // showing username on top
     document.getElementById("username").innerText = currentUser.username;
-    // logout logic
-    document.getElementById("logout").addEventListener("click", () => {
-        localStorage.removeItem("currentuser");
-        window.location.href = "login.html";
-    })
+
 
 
 
@@ -29,33 +25,47 @@ if (currentUser) {
 else {
     window.location.href = "login.html";
 }
+ document.getElementById("menus").innerHTML += `
+                <li>
+                    <button id="logout">Logout</button>
+                </li>
+
+                <li>
+                <button id="deleteaccount" data-index = ${userindex}>Delete Account</button>
+                </li>
+
+`
 document.getElementById("useraccount").addEventListener("click", () => {
     document.getElementById("menus").classList.toggle('activemenu')
+
 })
 
-
-document.getElementById("deletemenubtn").innerHTML = `
-
-<button id="deleteaccount" data-index = ${userindex}>Delete Account</button>
-`
-
-document.getElementById("deleteaccount").addEventListener("click", () => {
-    const confirmmsg = confirm("Your data will be delete permanently, are you sure to delete your account");
-    console.log(confirmmsg);
-    if (confirmmsg === true) {
-        allregisterusers.splice(userindex, 1);
+// logout logic
+    document.getElementById("logout").addEventListener("click", () => {
         localStorage.removeItem("currentuser");
-        localStorage.setItem("registerusers", JSON.stringify(allregisterusers));
-        popmsgshow("white", "red", "Account deleted ");
-        setTimeout(() => {
-            window.location.href = "login.html";
-            return;
-        }, 2200);
-    }
-    else {
-        alert("Account deletion Canceled by user !")
-    }
-})
+        window.location.href = "login.html";
+    })
+    // delete accout logic  
+    document.getElementById("deleteaccount").addEventListener("click", () => {
+        const confirmmsg = confirm("Your data will be delete permanently, are you sure to delete your account");
+        console.log(confirmmsg);
+        if (confirmmsg === true) {
+            allregisterusers.splice(userindex, 1);
+            localStorage.removeItem("currentuser");
+            localStorage.setItem("registerusers", JSON.stringify(allregisterusers));
+            popmsgshow("white", "red", "Account deleted ");
+            setTimeout(() => {
+                window.location.href = "login.html";
+                return;
+            }, 2200);
+        }
+        else {
+            alert("Account deletion Canceled by user !")
+        }
+    })
+
+
+
 
 function popmsgshow(txtcolor, bgcolor, textmsg) {
     document.getElementById("popmsg").style.right = "10%";
