@@ -64,7 +64,7 @@ function rendertask(data) {
                     <button class="deletetask" data-index = ${index}>delete</button>
                       ${element.status === "Completed"
                     ?
-                    `<button class="pendingtaskbtn" data-index="${index}">
+                    `<button class="markpendingtaskbtn" data-index="${index}">
                         Mark Pending
                     </button>`
                     :
@@ -161,6 +161,21 @@ document.getElementById("alltask").addEventListener("click", (event) => {
         localStorage.setItem("currentuser", JSON.stringify(allregisterusers[userindex]));
         localStorage.setItem("registerusers", JSON.stringify(allregisterusers));
         popmsgshow("white", "green", "Task Marked Complete !")
+        rendertask(allregisterusers[userindex].tasks)
+    }
+
+    if (event.target.classList.contains("markpendingtaskbtn")) {
+        let activityuser = {
+            id: idgenerate(),
+            title: allregisterusers[userindex].tasks[taskindex].title,
+            action: "Task Marked Pending:",
+            createdAt: new Date().toISOString()
+        }
+        allregisterusers[userindex].activities.push(activityuser);
+        allregisterusers[userindex].tasks[taskindex].status = "pending";
+        localStorage.setItem("currentuser", JSON.stringify(allregisterusers[userindex]));
+        localStorage.setItem("registerusers", JSON.stringify(allregisterusers));
+        popmsgshow("white", "green", "Task Marked Pending !")
         rendertask(allregisterusers[userindex].tasks)
     }
 
