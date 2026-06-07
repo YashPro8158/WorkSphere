@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkSphere | Login Here</title>
+    <link rel="stylesheet" href="CSS/login.css">
+    <link rel="stylesheet" href="CSS/component.css">
+</head>
+<style>
+    body {
+        font-family: sans-serif;
+    }
+</style>
+
+<body>
+    <h1>Access your WorkSphere account </h1>
+    <div id="popmsg"></div>
+    <div class="logincontainer">
+        <form action="index.html" id="loginform">
+
+            <label for="loginemail">Email-Id:</label>
+            <input type="email" id="loginemail">
+            <label for="loginpassword">Password:</label>
+            <input type="password" id="loginpassword">
+            <div class="buttons">
+                <button type="submit" id="loginuser">Login</button>
+                <button type="button" id="registerbtn">Register</button>
+                <button type="button" id="forgotbtn">Forgot password</button>
+            </div>
+            <div class="forgotinputbox" id="forgotinputbox">
+                <h2><span id="foundusername"></span> Change your password here </h2>
+                <label for="login2faanswer">Enter child hood name set by you on registration time</label>
+                <input type="text" id="login2faanswer"><br>
+                <label for="forgotpasswordnew">Change Password:</label>
+                <input type="password" id="forgotpasswordnew">
+                <div class="buttons">
+                    <button type="button" id="changepassword">Change</button>
+                    <button type="button" id="cancelforgot">Cancel</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <script src="JS/login.js"></script>
+</body>
+
+</html>

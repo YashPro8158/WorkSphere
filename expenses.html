@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkSphere - AI Powered Productivity & Project Management Platform</title>
+    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="CSS/component.css">
+    <link rel="stylesheet" href="CSS/expense.css">
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-chubby/css/uicons-regular-chubby.css'>
+</head>
+
+<body>
+
+    <div id="popmsg"></div>
+    <div class="topmenus">
+        <div class="leftlogo" id="logo">
+            WorkSphere
+        </div>
+        <div class="rightmenus">
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="notes.html">Notes</a></li>
+                <li><a href="task.html">Task</a></li>
+                <li><a href="expenses.html">Expenses</a></li>
+            </ul>
+
+        </div>
+        <div class="useraccount" id="useraccount">
+            <div class="profileicon" id="profileicon"><i class="fi fi-rc-circle-user"></i></div>
+            <ul class="menus" id="menus">
+                <li>
+                    <button id="logout">Logout</button>
+                </li>
+                <li id="deletemenubtn"></li>
+            </ul>
+        </div>
+    </div>
+    <h1>Welcome Back, <span id="username"></span> 👋</h1>
+
+    <div class="expensesummry">
+        <h2 class="left">Expense Summary </h2>
+        <div class="summarydetails right" >
+            <table border="1" >
+                <tr>
+                    <th>Total Expenses: </th>
+                    <th>Highest Expenses: </th>
+                    <th>Total Transactions: </th>
+                </tr>
+                <tr>
+                    <td><span id="totalexpenseamount"></span></td>  
+                    <td><span id="highexpenseamount"></span></td>   
+                    <td><span id="totaltransaction"></span></td>    
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+    <div class="createcontainer">
+        <h2>Add Expense</h2>
+        <div class="input">
+            <label for="expensetitle">Title: </label>
+            <input type="text" id="expensetitle" required>
+            <label for="expenseamount">Amount: </label>
+            <input type="number" id="expenseamount" required>
+            <label for="expensedate">Date: </label>
+            <input type="date" id="expensedate" required>
+            <label for="expensecategory">Expense Category: </label>
+            <select name="expensecategory" id="expensecategory">
+                <option value="food">Food</option>
+                <option value="travel">Travel</option>
+                <option value="bill">Bills</option>
+                <option value="shopping">Shopping</option>
+            </select>
+            <button id="addexpensebtn">Add expense</button>
+        </div>
+    </div>
+    <!-- Filter Container -->
+    <div class="filtercontainer">
+        <h2>Filter Task</h2>
+        <div class="filterbuttons">
+            <button id="all">All</button>
+            <button id="food">Food</button>
+            <button id="travel">Travel</button>
+            <button id="bill">Bills</button>
+            <button id="shopping">Shopping</button>
+        </div>
+    </div>
+    <!-- Search  Container -->
+    <div class="searchcontainer">
+        <h2>Search Expense</h2>
+        <div class="input">
+            <input type="search" id="searchexpense" placeholder="Type here to search.... ">
+        </div>
+    </div>
+
+
+    <!-- My Container -->
+    <div class="mylistcontainer">
+        <h2>My Expenses</h2>
+        <div id="allexpenses" class="allexpenses">
+        </div>
+        <div class="updatecontainer" id="updatecontainer">
+            <h2>Update Expense: </h2>
+            <label for="updatetitle">Title: </label>
+            <input type="text" id="updatetitle">
+            <label for="updateamount">Amount: </label>
+            <input type="number" id="updateamount" required>
+            <label for="updatedate">Date: </label>
+            <input type="date" id="updatedate" required>
+            <label for="updatecategory">Expense Category: </label>
+            <select name="updatecategory" id="updatecategory">
+                <option value="food">Food</option>
+                <option value="travel">Travel</option>
+                <option value="bill">Bills</option>
+                <option value="shopping">Shopping</option>
+            </select>
+            <div class="bottomupdatebtns">
+                <button id="updateexpense">Update</button>
+                <button id="cancelexpenseupdate">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="JS/main.js"></script>
+    <script src="JS/expense.js"></script>
+</body>
+
+</html>

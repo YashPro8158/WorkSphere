@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkSphere - AI Powered Productivity & Project Management Platform</title>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-chubby/css/uicons-regular-chubby.css'>
+    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="CSS/notes.css">
+    <link rel="stylesheet" href="CSS/component.css">
+</head>
+
+<body>
+
+    <div id="popmsg"></div>
+    <div class="topmenus">
+        <div class="leftlogo" id="logo">
+            WorkSphere
+        </div>
+        <div class="rightmenus">
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="notes.html">Notes</a></li>
+                <li><a href="task.html">Task</a></li>
+                <li><a href="expenses.html">Expenses</a></li>
+            </ul>
+
+        </div>
+        <div class="useraccount" id="useraccount">
+            <div class="profileicon" id="profileicon"><i class="fi fi-rc-circle-user"></i></div>
+            <ul class="menus" id="menus">
+                <li>
+                    <button id="logout">Logout</button>
+                </li>
+
+                <li id="deletemenubtn"></li>
+            </ul>
+        </div>
+    </div>
+    <h1>Welcome Back, <span id="username"></span> 👋</h1>
+    <!-- Create Note Container -->
+    <div class="createcontainer">
+        <h2>Create Notes</h2>
+        <div class="input">
+            <label for="notetitle">Title: </label>
+            <input type="text" id="notetitle" required>
+            <label for="notedesc">Description: </label>
+            <textarea name="notedesc" id="notedesc" required rows="8"></textarea>
+            <button id="addnotebtn">Add Note</button>
+        </div>
+    </div>
+
+
+    <!-- Search Note Container -->
+    <div class="searchcontainer">
+        <h2>Search Notes</h2>
+        <div class="input">
+            <input type="search" id="searchnote" placeholder="Type here to search.... ">
+        </div>
+    </div>
+
+
+    <!-- My Note Container -->
+    <div class="mylistcontainer">
+        <h2>My Notes</h2>
+        <div id="allnotes" class="allnotes">
+        </div>
+        <div class="updatecontainer" id="updatenotecontainer">
+            <h2>Update note: </h2>
+            <label for="updatetitle">Title: </label>
+            <input type="text" id="updatetitle">
+
+            <label for="updatedesc">description: </label>
+            <textarea name="updatedesc" id="updatedesc" rows="8"></textarea>
+            <div class="bottomupdatebtns">
+                <button id="updateusernote">Update</button>
+                <button id="cancelnoteupdate">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS/notes.js"></script>
+
+    <script src="JS/main.js"></script>
+</body>
+
+</html>

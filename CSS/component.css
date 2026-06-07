@@ -1,0 +1,308 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+
+
+:root {
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+
+    --success: #10b981;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+
+    --bg: #f8fafc;
+    --card: #ffffff;
+
+    --text: #0f172a;
+    --text-light: #64748b;
+
+    --border: #e2e8f0;
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, .05);
+    --shadow-md: 0 10px 25px rgba(0, 0, 0, .08);
+    --shadow-lg: 0 20px 40px rgba(0, 0, 0, .12);
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 22px;
+
+    --transition: all .3s ease;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+
+
+h1 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin: 35px 0;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-weight: 600;
+}
+
+
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: white;
+    outline: none;
+    font-size: 15px;
+    transition: var(--transition);
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, .15);
+}
+
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    padding: 12px 20px;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+    color: white;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: var(--transition);
+}
+
+button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+
+.createcontainer,
+.searchcontainer,
+.filtercontainer,
+.mylistcontainer,
+.expensesummry {
+    width: min(1200px, 92%);
+    margin: 20px auto;
+}
+
+
+.createcontainer,
+.searchcontainer,
+.filtercontainer,
+.mylistcontainer,
+.expensesummry {
+    background: var(--card);
+
+    padding: 24px;
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+}
+
+
+
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.input button {
+    width: fit-content;
+    margin-top: 10px;
+}
+
+
+.databox {
+    background: white;
+
+    padding: 20px;
+
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow-sm);
+
+    transition: var(--transition);
+
+    border: 1px solid transparent;
+}
+
+.databox:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(99, 102, 241, .2);
+
+    box-shadow: var(--shadow-md);
+}
+
+.databox p {
+    color: var(--text-light);
+
+    margin: 12px 0;
+
+    line-height: 1.7;
+
+    word-break: break-word;
+}
+
+.databox button {
+    margin-right: 8px;
+    margin-top: 10px;
+}
+
+.filterbuttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+.updatecontainer {
+    width: min(550px, 90%);
+
+    position: fixed;
+
+    top: -120%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: white;
+
+    border-radius: 22px;
+
+    box-shadow: var(--shadow-lg);
+
+    padding: 25px;
+
+    z-index: 999;
+
+    opacity: 0;
+
+    transition: .35s ease;
+}
+
+.updatecontainer input,
+.updatecontainer textarea,
+.updatecontainer select {
+    margin: 12px 0;
+}
+
+.bottomupdatebtns {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+
+
+#popmsg {
+    position: fixed;
+
+    top: 20px;
+    right: -400px;
+
+    z-index: 9999;
+
+    padding: 14px 22px;
+
+    border-radius: 14px;
+
+    box-shadow: var(--shadow-lg);
+
+    font-weight: 500;
+
+    transition: .4s ease;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid var(--border);
+}
+
+
+
+@media (max-width:768px) {
+
+    h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .createcontainer,
+    .searchcontainer,
+    .filtercontainer,
+    .mylistcontainer,
+    .expensesummry {
+        width: 95%;
+        padding: 18px;
+    }
+
+    .bottomupdatebtns {
+        flex-direction: column;
+    }
+
+    .bottomupdatebtns button {
+        width: 100%;
+    }
+}

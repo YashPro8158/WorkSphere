@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkSphere - AI Powered Productivity & Project Management Platform</title>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-chubby/css/uicons-regular-chubby.css'>
+    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="CSS/component.css">
+</head>
+
+<body>
+
+    <div id="popmsg"></div>
+    <div class="topmenus">
+        <div class="leftlogo" id="logo">
+            WorkSphere
+        </div>
+        <div class="rightmenus">
+            <ul>
+                <li><a href="notes.html">Notes</a></li>
+                <li><a href="task.html">Task</a></li>
+                <li><a href="expenses.html">Expenses</a></li>
+            </ul>
+
+        </div>
+        <div class="useraccount" id="useraccount">
+            <div class="profileicon" id="profileicon"><i class="fi fi-rc-circle-user"></i></div>
+            <ul class="menus" id="menus">
+                <li>
+                    <button id="logout">Logout</button>
+                </li>
+
+                <li id="deletemenubtn"></li>
+            </ul>
+        </div>
+    </div>
+    <h1>Welcome Back, <span id="username"></span> 👋</h1>
+    <div class="useractionactivity">
+        <a href="notes.html#allnotes" class="activitybox">
+            <aside class="left">Notes</aside>
+            <aside class="right"><span id="notescount">0</span></aside>
+        </a>
+
+        <a href="task.html#alltask" class="activitybox">
+            <aside class="left">Task</aside>
+            <aside class="right"><span id="taskcount">0</span></aside>
+        </a>
+
+        <a href="expenses.html" class="activitybox">
+            <aside class="left">Expenses</aside>
+            <aside class="right"><span id="expensescount">0</span></aside>
+        </a>
+        <a href="" class="activitybox">
+            <aside class="left">Total Completed</aside>
+            <aside class="right"><span id="completedcount">0</span></aside>
+        </a>
+    </div>
+    <div class="recentactivity">
+        <h2>Recent Activity</h2>
+        <p id="recentactivity">
+
+        </p>
+    </div>
+
+    <script src="JS/main.js"></script>
+    <script src="JS/renderuseractivity.js"></script>
+    <script>
+        notescount.innerText = allregisterusers[userindex].notes.length;
+        taskcount.innerText = allregisterusers[userindex].tasks.length;
+        expensescount.innerText = allregisterusers[userindex].expenses.length;
+        const completetaskfilter = allregisterusers[userindex].tasks.filter(task => task.status === "Completed");
+        completedcount.innerText = completetaskfilter.length;
+    </script>
+</body>
+
+</html>

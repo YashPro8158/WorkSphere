@@ -1,0 +1,236 @@
+
+
+.alltask {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(320px, 1fr));
+
+    gap: 24px;
+
+    margin-top: 20px;
+}
+
+
+
+.alltask .databox {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.priority {
+
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    margin-bottom: 12px;
+}
+
+.priority.high {
+    background: rgba(239, 68, 68, .12);
+    color: #dc2626;
+}
+
+.priority.medium {
+    background: rgba(245, 158, 11, .15);
+    color: #d97706;
+}
+
+.priority.low {
+    background: rgba(16, 185, 129, .12);
+    color: #059669;
+}
+
+
+
+.databox h3 {
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+}
+
+
+.databox p {
+
+    color: var(--text-light);
+
+    line-height: 1.7;
+
+    margin: 12px 0;
+
+    word-break: break-word;
+}
+
+
+
+.taskmeta {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+.taskmeta span {
+
+    background: #f8fafc;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    padding: 8px 12px;
+
+    font-size: 13px;
+
+    color: var(--text-light);
+}
+
+
+
+.notesbtn {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+
+
+.completetask {
+
+    background: var(--success);
+}
+
+.completetask:hover {
+
+    background: #059669;
+}
+
+
+
+.edittask {
+
+    background: var(--primary);
+}
+
+.edittask:hover {
+
+    background: var(--primary-hover);
+}
+
+
+
+.deletetask {
+
+    background: var(--danger);
+}
+
+.deletetask:hover {
+
+    background: #dc2626;
+}
+
+
+.filterbuttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.filterbuttons button {
+
+    min-width: 120px;
+}
+
+
+
+.completed {
+
+    border-left: 5px solid var(--success);
+}
+
+.completed h3 {
+
+    text-decoration: line-through;
+
+    opacity: .8;
+}
+
+
+
+.pending {
+
+    border-left: 5px solid var(--warning);
+}
+
+
+
+.updatecontainer select {
+
+    width: 100%;
+}
+
+
+
+#canceltaskupdate {
+
+    background: var(--danger);
+}
+
+#canceltaskupdate:hover {
+
+    background: #dc2626;
+}
+
+
+
+@media (max-width:768px) {
+
+    .alltask {
+
+        grid-template-columns: 1fr;
+    }
+
+    .notesbtn {
+
+        flex-direction: column;
+    }
+
+    .notesbtn button {
+
+        width: 100%;
+    }
+
+    .taskmeta {
+
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,205 @@
+
+
+.allnotes {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(320px, 1fr));
+
+    gap: 24px;
+
+    margin-top: 20px;
+}
+
+
+
+.notesbox,
+.databox {
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 22px;
+
+    box-shadow: var(--shadow-sm);
+
+    transition: .3s;
+
+    border: 1px solid transparent;
+
+}
+
+
+.notesbox:hover,
+.databox:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: var(--shadow-md);
+
+    border-color:
+        rgba(99, 102, 241, .15);
+
+}
+
+
+.notesbox h3,
+.databox h3 {
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.notesbox p,
+.databox p {
+
+    color: var(--text-light);
+
+    line-height: 1.7;
+
+    margin: 12px 0;
+
+    word-break: break-word;
+
+}
+
+
+
+.notesbtn {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+}
+
+
+
+.editnote {
+
+    background: var(--primary);
+
+}
+
+.editnote:hover {
+
+    background: var(--primary-hover);
+
+}
+
+
+.deletenote {
+
+    background: var(--danger);
+
+}
+
+.deletenote:hover {
+
+    background: #dc2626;
+
+}
+
+
+
+#allnotes {
+
+    min-height: 120px;
+
+}
+
+
+
+.searchcontainer {
+
+    margin-top: 25px;
+
+}
+
+
+
+.createcontainer {
+
+    margin-top: 10px;
+
+}
+
+
+
+.updatecontainer h2 {
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.updatecontainer label {
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+.bottomupdatebtns {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+}
+
+
+#cancelnoteupdate {
+
+    background: var(--danger);
+
+}
+
+#cancelnoteupdate:hover {
+
+    background: #dc2626;
+
+}
+
+
+
+@media (max-width:768px) {
+
+    .allnotes {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .notesbtn {
+
+        flex-direction: column;
+
+    }
+
+    .notesbtn button {
+
+        width: 100%;
+
+    }
+
+}
